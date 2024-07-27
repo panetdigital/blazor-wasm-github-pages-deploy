@@ -23,5 +23,14 @@
     "date": "2022-01-10",
     "temperatureC": -2,
     "summary": "Chilly"
-  }
+  },
+   { 
+    "date": 1,
+    "temperatureC": "Maçã", 
+    "summary": "Frutas"
+   },
+  { "date": 2, "temperatureC": "Batata", "summary": "Legumes" },
+  { "date": 3, "temperatureC": "Alface", "summary": "Verduras" },
+  { "date": 4, "temperatureC": "Cenoura", "summary": "Legumes" },
+ 
 ]

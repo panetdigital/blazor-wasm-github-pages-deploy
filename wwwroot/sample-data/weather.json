@@ -22,15 +22,13 @@
   {
     "date": "2022-01-10",
     "temperatureC": -2,
-    "summary": "Chilly"
+    "summary": "Limao"
   },
    { 
-    "date": 1,
-    "temperatureC": "Maçã", 
+    "date":2022-01-10,
+    "temperatureC": "2", 
     "summary": "Frutas"
    },
-  { "date": 2, "temperatureC": "Batata", "summary": "Legumes" },
-  { "date": 3, "temperatureC": "Alface", "summary": "Verduras" },
-  { "date": 4, "temperatureC": "Cenoura", "summary": "Legumes" },
+
  
 ]

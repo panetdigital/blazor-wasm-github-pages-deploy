@@ -22,6 +22,7 @@
   {
     "date": "2022-01-10",
     "temperatureC": -2,
+<<<<<<< HEAD
     "summary": "Chilly"
   },
   {
@@ -29,4 +30,15 @@
     "temperatureC": -2,
     "summary": "Beko"
   }
+=======
+    "summary": "Limao"
+  },
+   { 
+    "date":"2022-01-10",
+    "temperatureC": "2", 
+    "summary": "Frutas"
+   },
+
+ 
+>>>>>>> 95851ad4894df02eb036b615e58fd06b60961fd9
 ]

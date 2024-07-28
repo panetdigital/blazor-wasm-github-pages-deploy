@@ -1,0 +1,47 @@
+@page "/listaproduto"
+@inject HttpClient Http
+<h1>Lista de Frutas</h1>
+
+<p>Esta página exibe a lista de frutas do arquivo frutas.json.</p>
+
+@if (produtos == null)
+{
+    <p><em>Carregando...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Imagem</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var produto in produtos)
+            {
+                <tr>
+                    <td>@produto.Codigo</td>
+                    <td>@produto.Nome</td>
+                    <td><img src="@produto.Imagem" alt="@produto.Nome" /></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Fruta[]? produtos;
+   
+    protected override async Task OnInitializedAsync()
+    {
+        produtos = await Http.GetFromJsonAsync<Fruta[]>("sample-data/frutas.json");
+    }
+    public class Fruta
+    {
+        public int Codigo { get; set; }
+        public string Nome { get; set; }
+        public string Imagem { get; set; } // Caminho para a imagem do produto
+    }
+}

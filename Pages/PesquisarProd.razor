@@ -40,7 +40,7 @@ else if (products != null && products.Count == 0)
     {
         if (!string.IsNullOrEmpty(searchTerm))
         {
-            products = allProducts.Where(p => p.Nome.Contains(searchTerm, StringComparison.OrdinalIgnoreCase));
+            products = allProducts.FindAll(p => p.Nome.Contains(searchTerm, StringComparison.OrdinalIgnoreCase));
         }
         else
         {

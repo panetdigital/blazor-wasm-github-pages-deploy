@@ -1,6 +1,8 @@
 @page "/listaproduto"
 @inject HttpClient Http
-<h1>Lista de Frutas</h1>
+
+<div class="container text-center">
+<h1>Lista de Produtos</h1>
 
 <p>Esta página exibe a lista de frutas do arquivo frutas.json.</p>
 
@@ -10,7 +12,7 @@
 }
 else
 {
-    <table class="table">
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Código</th>
@@ -30,7 +32,7 @@ else
         </tbody>
     </table>
 }
-
+</div>
 @code {
     private Fruta[]? produtos;
    

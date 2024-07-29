@@ -22,7 +22,7 @@ else
             @foreach (var produto in produtos)
             {
                 <tr>
-                    <td>@produto.cod</td>
+                    <td>@produto.preco</td>
                     <td>@produto.Nome</td>
                     <td><img src="@produto.Imagem" alt="@produto.Nome" style="width: 200px;" /></td>
                 </tr>
@@ -40,7 +40,7 @@ else
     }
     public class Fruta
     {
-        public int cod { get; set; }
+        public int preco { get; set; }
         public string Nome { get; set; }
         public string Imagem { get; set; } // Caminho para a imagem do produto
     }

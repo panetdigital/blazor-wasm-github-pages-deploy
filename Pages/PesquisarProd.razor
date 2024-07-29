@@ -1,0 +1,59 @@
+@page "/pesquisarprod"
+@inject HttpClient Http
+<div class="container">
+<h3>Pesquisar Produtos</h3>
+
+<input type="text" @bind="searchTerm" placeholder="Digite o nome do produto" />
+<button @onclick="SearchProducts">Pesquisar</button>
+
+@if (products != null && products.Count > 0)
+{
+    <ul>
+        @foreach (var product in products)
+        {
+            <li>
+		<p>Nome: @product.Nome</p>
+                <p>Código: @product.CodItem</p>
+                <img src="@product.Imagem" alt="@product.Nome" width="30" height="30" />
+               
+            </li>
+        }
+    </ul>
+}
+else if (products != null && products.Count == 0)
+{
+    <p>Nenhum produto encontrado.</p>
+}
+
+@code {
+    private List<Product> products;
+    private List<Product> allProducts;
+    private string searchTerm = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        allProducts = await Http.GetFromJsonAsync<List<Product>>("sample-data/frutas.json");
+        products = allProducts;
+    }
+
+    private void SearchProducts()
+    {
+        if (!string.IsNullOrEmpty(searchTerm))
+        {
+            products = allProducts.FindAll(p => p.nome.Contains(searchTerm, StringComparison.OrdinalIgnoreCase));
+        }
+        else
+        {
+            products = allProducts;
+        }
+    }
+}
+</div>
+@code {
+    public class Product
+    {
+        public string CodItem { get; set; }
+        public string Name { get; set; }
+        public string Image { get; set; }
+    }
+}

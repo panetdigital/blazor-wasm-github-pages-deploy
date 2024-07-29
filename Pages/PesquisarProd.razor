@@ -5,15 +5,15 @@
   <h3>Pesquisar Produtos</h3>
 
   <input type="text" @bind="searchTerm" placeholder="Digite o nome do produto" />
-  <button @onclick="SearchProducts">Pesquisar</button>
+  <button type="button" class="btn btn-primary" @onclick="SearchProducts">Pesquisar</button>
 
   @if (products != null && products.Count > 0)
   {
     <ul style="list-style-type: none;">
       <li>
-        <p>Código: @products[0].CodItem</p>
-        <p>Nome: @products[0].Nome</p>
-        <img src="@products[0].Imagem" alt="@products[0].Nome" width="60" height="60" />
+        <p>Código: @products.CodItem</p>
+        <p>Nome: @products.Nome</p>
+        <img src="@products.Imagem" alt="@products[0].Nome" width="200" height="200" />
       </li>
     </ul>
   }

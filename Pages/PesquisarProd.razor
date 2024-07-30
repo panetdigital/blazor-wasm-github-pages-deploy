@@ -10,11 +10,14 @@
   @if (products != null && products.Count > 0)
   {
     <ul style="list-style-type: none;">
-      <li>
-        <p>Código: @products[2].CodItem</p>
-        <p>Nome: @products[2].Nome</p>
-        <img src="@products[2].Imagem" alt="@products[2].Nome" width="200" height="200" />
-      </li>
+      @for (int i = 0; i < Math.Min(3, products.Count); i++)
+      {
+        <li>
+          <p>Código: @products[i].CodItem</p>
+          <p>Nome: @products[i].Nome</p>
+          <img src="@products[i].Imagem" alt="@products[i].Nome" width="60" height="60" />
+        </li>
+      }
     </ul>
   }
   else if (products != null && products.Count == 0)

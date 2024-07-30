@@ -10,12 +10,13 @@
   @if (products != null && products.Count > 0)
   {
     <ul style="list-style-type: none;">
-      @for (int i = 0; i < Math.Min(3, products.Count); i++)
+      @for (int i = 0; i < Math.Min(4, products.Count); i++)
       {
         <li>
           <p>Código: @products[i].CodItem</p>
           <p>Nome: @products[i].Nome</p>
-          <img src="@products[i].Imagem" alt="@products[i].Nome" width="60" height="60" />
+          <img src="@products[i].Imagem" alt="@products[i].Nome" width="200" height="200" />
+           <hr />
         </li>
       }
     </ul>
